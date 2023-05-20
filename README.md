@@ -3,7 +3,7 @@
 
 Raft: In Search of an Understandable Consensus Algorithm
 
-![](imgs/CAP.png)
+![](imgs/cap.png)
 
 
 在很多科学中都存在一种三元悖论，即一个系统不可能同时满足三个条件。
