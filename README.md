@@ -3,9 +3,6 @@
 
 Raft: In Search of an Understandable Consensus Algorithm
 
-![](imgs/cap.png)
-
-
 在很多科学中都存在一种三元悖论，即一个系统不可能同时满足三个条件。
 如经济学中的`蒙代尔不可能三角`。
 在计算机科学中也有着类似的原则, 比如说`CAP原则`.
@@ -13,6 +10,9 @@ Raft: In Search of an Understandable Consensus Algorithm
 `CAP原则`：
     指的是在一个分布式系统中，分布式系统的可用性，一致性和分区容错性，三者只可以取其二，不可能通知满足三个要求。
     或者是，在分布式系统中，在满足分区容错性的前提下，系统的可用性，或者一致性只可以取其一。
+
+![](imgs/cap.png)
+
 
 下面会逐步的解释CAP原则，和对应的解决方案 即`RAFT协议`。
 同时会学习一下工业界是如何一步步将RAFT应用到中间件的。
