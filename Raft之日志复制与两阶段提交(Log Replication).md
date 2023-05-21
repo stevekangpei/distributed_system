@@ -62,6 +62,7 @@ Leader接收到客户端的指令后，会把指令作为一个新的条目追�
 
  ![](imgs/leader_crush.png)
 
+
 我们来看上面的这张图，Follower中的C 和 D，竟然比上面的leader还多出了两个日志。
 为什么leader中没有这些日志还可以当选leader呢，因为 c 和d中多出的日志还没有提交。
 在这些7个节点的集群中，leader可以依靠 剩下的几个当选为新的leader。
@@ -72,6 +73,7 @@ Leader接收到客户端的指令后，会把指令作为一个新的条目追�
 ### AppendEntry RPC
 
  ![](imgs/append_entry_req.png)
+    
     prevLogIndex， prevLogTerm 这两个字段是用来进行一致性检查的。
     只有这两个都与Follower的相同，leader 才会认为日志是一致的。
     entries 是当前日志体。也就是命令的内容
@@ -85,9 +87,13 @@ Leader接收到客户端的指令后，会把指令作为一个新的条目追�
 
 
 ### 总结：
-> Leader 只需要正常的操作，然后日志就可以在回复AppendEntries 一致性检查失败的时候自动趋于一致。
-> leader 从来不会覆盖或者删除自己的日志条目。
-> 只要过半的节点能够正常服务，Raft就可以正常对外部提供服务。
-> 单个运行慢的Follower不会影响整体的服务性能
+    
+    > Leader 只需要正常的操作，然后日志就可以在回复AppendEntries 一致性检查失败的时候自动趋于一致。
+    
+    > leader 从来不会覆盖或者删除自己的日志条目。
+    
+    > 只要过半的节点能够正常服务，Raft就可以正常对外部提供服务。
+    
+    > 单个运行慢的Follower不会影响整体的服务性能
 
 
