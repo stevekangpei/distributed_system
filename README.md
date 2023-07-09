@@ -26,4 +26,17 @@ Raft: In Search of an Understandable Consensus Algorithm
 （2）Raft状态机做了简化。
     总共只包含三个状态，分别是，Follower，Candidate，Leader。
     每一个服务节点分别在这三个状态之间进行切换。
-   
+  
+ 
+## 阅读顺序
+
+（1）术语讲解
+（2）多数派原则+主从同步+读写分离
+（3）成员详情
+（4）集群内部RPC详解
+（5）领导者选举
+（6）日志复制和两阶段提交
+（7）集群成员变更
+（8）极端情况
+（9）常见问题
+
